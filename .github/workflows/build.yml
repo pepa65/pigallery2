@@ -104,9 +104,9 @@ jobs:
         container: [alpine,  debian-trixie ]
         include:
           - container: alpine
-            platforms: linux/amd64,linux/arm64
-          - container: debian-trixie
             platforms: linux/amd64,linux/arm64, linux/arm/v7
+          - container: debian-trixie
+            platforms: linux/amd64,linux/arm64
 
     steps:
       - name: Checkout
