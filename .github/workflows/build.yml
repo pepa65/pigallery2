@@ -101,12 +101,14 @@ jobs:
     needs: [ test, create-release ]
     strategy:
       matrix:
-        container: [alpine,  debian-trixie ]
+        container: [alpine,  debian-trixie, debian-bookworm]
         include:
           - container: alpine
-            platforms: linux/amd64,linux/arm64, linux/arm/v7
+            platforms: linux/amd64,linux/arm64
           - container: debian-trixie
             platforms: linux/amd64,linux/arm64
+          - container: debian-bookworm
+            platforms: linux/amd64,linux/arm64, linux/arm/v7
 
     steps:
       - name: Checkout
